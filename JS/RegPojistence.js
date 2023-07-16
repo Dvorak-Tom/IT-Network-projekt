@@ -50,7 +50,7 @@ export class RegPojistence {
     // vytvoreni tlacitka pro smazani pojistence
     tlacitkoSmazat(idNum) {
         const button = document.createElement('button');
-        button.textContent = 'Smaz';
+        button.textContent = 'Smaž';
         button.classList.add('btn-smazat');
         button.addEventListener('click', () => {
             regPojistence.smazPojistence(idNum);
@@ -63,7 +63,7 @@ export class RegPojistence {
     tlacitkoEdit(idNum) {
         const button = document.createElement('button');
         button.classList.add('btn-edit');
-        button.textContent = 'Edit';
+        button.textContent = 'Edituj';
         button.addEventListener('click', () => {
             window.location.href = `detailPojistence.html?idNum=${idNum}`;
         });
