@@ -20,7 +20,7 @@ button:hover {
     color: white;
     border: none;
     border-radius: 5px;
- 
+    cursor: pointer;
 }
 
 .btn-edit {
@@ -28,12 +28,12 @@ button:hover {
     color: white;
     border: none;
     border-radius: 5px;
-  
+    cursor: pointer;
+    margin-top: 2px;
 }
 
 .btn-smazat:hover {
     background-color: #ff0000;
-    cursor: pointer;
 }
 
 .btn-edit:hover {
@@ -140,9 +140,9 @@ th:hover::after {
         color: white;
         border: none;
         border-radius: 5px;
-        font-size: 0.8em;;
-      
-     
+        font-size: 0.8em;
+        padding: 8px 2px;
+        
     }
     
     .btn-edit {
@@ -150,8 +150,10 @@ th:hover::after {
         color: white;
         border: none;
         border-radius: 5px;
-        font-size: 0.8em;;
-      
+        font-size: 0.8em;
+        padding: 8px 2px;
     }
-}
+
+    
+    }
 

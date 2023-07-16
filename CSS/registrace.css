@@ -3,7 +3,6 @@
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 100px;
     padding: 5px;
 }
 
@@ -20,6 +19,20 @@ tr:hover {
     width: 100px;
 }
 
+tr:nth-child(even) {
+    background-color: #e9e9e9;
+  }
+
+  tr th {
+    background-color: #ffffff;
+    color: rgb(91, 91, 91);
+    font-weight: bold;
+    ;
+  }
+
+  tr:hover {
+    background-color: #fff4dc;
+}
 
 /*tabulka end*/
 
@@ -61,29 +74,33 @@ tr:hover {
 @media (max-width: 576px) {
     main {
         max-width: 100%;
+        padding: 5px 5px 50px 5px;
     }
 
-
+    #bunka-smazat-edit {
+        width: 70px;
+        padding:5px 0px 5px 0px;
+        margin-top: 0px;
+    }
+    #container-seznam {
+        display: none;
+        margin: 5px 5px 50px 5px;
+        padding: 5px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
     #container-pojistenec {
         display: block;
     }
 
     body {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
+
+    table td {
+        padding: 5px 10px 5px 10px;}
 }
 
-tr:nth-child(even) {
-    background-color: #e9e9e9;
-  }
 
-  tr th {
-    background-color: #ffffff;
-    color: rgb(91, 91, 91);
-    font-weight: bold;
-  }
-
-  tr:hover {
-    background-color: #fff4dc;
-}
