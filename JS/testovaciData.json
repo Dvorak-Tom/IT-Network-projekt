@@ -1,0 +1,38 @@
+[
+    {
+        "idNum": 100,
+        "jmeno": "Arnold",
+        "prijmeni": "Schwarzenegger",
+        "vek": "75",
+        "tel": "123456789"
+    },
+    {   
+        "druhPojisteni": "STANDARD",
+        "idNum": 107,
+        "jmeno": "Tom",
+        "prijmeni": "Hanks",
+        "vek": "65",
+        "tel": "987654321"
+    },
+    {
+        "idNum": 108,
+        "jmeno": "Meryl",
+        "prijmeni": "Streep",
+        "vek": "72",
+        "tel": "555111222"
+    },
+    {
+        "idNum": 109,
+        "jmeno": "Brad",
+        "prijmeni": "Pitt",
+        "vek": "58",
+        "tel": "777888999"
+    },
+    {
+        "idNum": 113,
+        "jmeno": "Jennifer",
+        "prijmeni": "Lawrence",
+        "vek": "30",
+        "tel": "444555666"
+    }
+]

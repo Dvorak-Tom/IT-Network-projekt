@@ -1,0 +1,157 @@
+.btn {
+
+    padding: 10px 30px;
+    background-color: #4caf50;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.btn-smazat {
+    background-color: #ff5e00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+ 
+}
+
+.btn-edit {
+    background-color: #ffab0f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  
+}
+
+.btn-smazat:hover {
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background-color: #ee9b00;
+    color: white;
+    border: none;
+}
+
+
+
+/*odsazeni v tabulce*/
+#table .btn-edit {
+    margin-left: 2px
+}
+
+
+#btn-print {
+  
+    padding: 5px;
+    float: right;
+    display: none;
+}
+
+/* skryt tlacitka na vyber cisel */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+th {
+    position: relative;
+    cursor: pointer;
+}
+
+#jsonLoader {
+   position:fixed;
+   font-weight: 500;
+    bottom: 0;;
+    right:0;
+    margin: 10px;
+    padding: 0px;
+    background-color: rgba(0, 255, 255, 0);
+    border: none;
+    color:  #4caf50;
+    font-size: 3.5em;
+    cursor: pointer;
+    }
+#jsonLoader:hover {
+    color: #45a049;
+
+}
+
+
+
+.btn-info-text {
+    width:150px;
+    font-weight: 500;
+    color: #4caf50;
+    font-size: xx-small;
+
+    position: absolute;
+    font-weight: 500;
+    bottom: 0;
+    right: -50%;
+    margin: -5px;
+    
+  
+  }
+
+
+
+th::after  {
+    content: "seřadit";
+    position: absolute;
+    top: 90%;
+    /* adjust to place the tooltip where you want */
+    left: 50%;
+    background-color: #ffffff;
+    color: #333;
+    padding: 2px 4px;
+    font-weight: 100;
+    border-radius: 5px;
+    border: 1px solid #333;
+    /* adjust to your liking */
+    z-index: 1;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    font-size: smaller;
+}
+
+
+
+th:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 576px) {
+    .btn-smazat {
+        background-color: rgb(255, 94, 0);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 0.8em;;
+      
+     
+    }
+    
+    .btn-edit {
+        background-color: rgb(255, 171, 15);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 0.8em;;
+      
+    }
+}
+

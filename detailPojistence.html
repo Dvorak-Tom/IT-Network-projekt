@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/detail.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/buttons.css">
+    </head>
+
+    <body>
+        <div id="obsah-stranky">
+            <header>
+                <nav>
+                    <a id="insura" href="index.html">
+                        <p>InsuraApp</p>
+                    </a>
+                    <ul>
+                        <li><a href="index.html">Pojištěnci</a></li>
+                        <li><a href="about.html">O aplikaci...</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+
+
+                <div id="container-info">
+                    <h1>Informace o pojištěnci</h1>
+
+                    <div id="container-avatar">
+                        <img id="img-avatar" src="img/avatar.jpg">
+                    </div>
+
+                    <div class="container-detail">
+                        <p>ID </p>
+                        <p id="info-idNum"></p>
+                    </div>
+                    <div class="container-detail">
+                        <p>Jméno: </p>
+                        <p id="info-jmeno"></p>
+                    </div>
+                    <div class="container-detail">
+                        <p>Příjmení: </p>
+                        <p id="info-prijmeni"></p>
+                    </div>
+                    <div class="container-detail">
+                        <p>Věk: </p>
+                        <p id="info-vek"></p>
+                    </div>
+                    <div class="container-detail">
+                        <p>Telefon: </p>
+                        <p id="info-tel"></p>
+                    </div>
+                    <div class="container-detail">
+                        <p>Druh pojištění: </p>
+                        <p id="info-druhPojisteni"></p>
+                    </div>
+                    <div class="container-detail">
+                        <p>Poznámka: </p>
+                        <p id="info-poznamka"></p>
+                    </div>
+
+                </div>
+
+
+                <div id="container-editor">
+                    <h3>Editace pojištěnců</h3>
+                    <div class="container-inputs">
+                        <p>Jméno: </p>
+                        <textarea name="jmeno" id="jmeno" rows="1" class="editable"></textarea>
+                    </div>
+                    <div class="container-inputs">
+                        <p>Příjmení: </p>
+                        <textarea name="prijmeni" id="prijmeni" rows="1" class="editable"></textarea>
+                    </div>
+                    <div class="container-inputs">
+                        <p>Věk: </p>
+                        <textarea name="vek" id="vek" rows="1" class="editable"></textarea></textarea>
+                    </div>
+                    <div class="container-inputs">
+                        <p>Telefon: </p>
+                        <textarea name="tel" id="tel" rows="1" class="editable"></textarea></textarea>
+                    </div>
+                    <div class="container-inputs">
+                        <p>Druh pojištění</p>
+                        <select id="druhPojisteni">
+                            <option value="BASIC">BASIC</option>
+                            <option value="STANDARD">STANDARD</option>
+                            <option value="TOMMYMASTER">TOMMYMASTER</option>
+                        </select>
+                    </div>
+
+
+
+                    <div class="container-inputs">
+                        <p>Poznámka</p>
+                        <textarea name="poznamka" id="poznamka" cols="30" rows="3" placeholder="poznámka"
+                            class="editable"></textarea>
+                    </div>
+
+                </div>
+
+
+
+
+                <div id="container-tlacitka">
+                    <div class="container">
+                        <button class="btn" onclick="window.location.href='index.html'">Zpět na seznam</button>
+
+                        <button id="btn-ulozit" class="btn">Uložit</button>
+
+                        <button id="btn-edit" class="btn btn-edit">Editace</button>
+
+                        <button id="btn-smazat" class="btn btn-smazat">Smazat</button>
+                    </div>
+
+
+                </div>
+
+            </main>
+
+
+            <footer>
+                <p>InsuraApp 2023</p>
+            </footer>
+
+            <script type="module" src="/JS/DetailPojistence.js"></script>
+
+
+        </div>
+
+    </body>
+
+</html>

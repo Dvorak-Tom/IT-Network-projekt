@@ -1,0 +1,97 @@
+main {
+    text-align: left;
+}
+
+#container-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+#container-info,
+#container-editor {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#container-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#container-info h1 {
+    text-align: center;
+}
+
+#container-info p {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.container-detail :first-child {
+    font-weight: 600;
+    width: 30vh;
+}
+
+.container-detail :last-child {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+
+#container-editor {
+    display: none
+}
+
+#container-editor h3 {
+    text-align: center;
+}
+
+
+
+.container-detail {
+    display: flex;
+    align-items: center;
+}
+
+textarea.editable {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+}
+
+#druhPojisteni {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+.container-inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-inputs p {
+    width: 20vh;
+}
+
+#container-tlacitka {
+    text-align: center;
+}
