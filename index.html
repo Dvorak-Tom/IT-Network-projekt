@@ -8,6 +8,9 @@
         <link rel="stylesheet" type="text/css" href="./CSS/style.css">
         <link rel="stylesheet" type="text/css" href="./CSS/registrace.css">
         <link rel="stylesheet" type="text/css" href="./CSS/buttons.css">
+
+
+
     </head>
 
     <body>
@@ -50,23 +53,29 @@
                     <h2>Výpis pojištěnců</h2>
 
                     <table id="table">
-                        <button id="btn-print" class="btn"> &#128438</button>
+
+
+                        <button id="btn-print" class="btn">
+                            <img src="../IT-Network-projekt/img/printer.svg" alt="">
+                        </button>
+
                     </table>
                 </div>
             </main>
         </div>
         <footer>
             <p>InsuraApp 2023</p>
-
-            <button id="jsonLoader" class="btn-info">&#128427
-                <span class="btn-info-text">Nahrání testovacích dat</span>
-            </button>
+            <div id="jsonLoader">
+                <img src="../IT-Network-projekt/img/floppy.png" alt="">
+                <span>Nahrání testovacích dat</span>
+            </div>
         </footer>
 
 
         <script type="module" src="./JS/RegPojistence.js"></script>
         <script type="module" src="./JS/obsluhaUloziste.js"></script>
         <script type="module" src="./JS/obsluhaReg.js"></script>
+
     </body>
 
 </html>
