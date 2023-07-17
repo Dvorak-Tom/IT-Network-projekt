@@ -10,12 +10,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-size: small;
-
+    font-size: 1em;
 }
 
 #obsah-stranky {
     flex: 1 0 auto;
+    background-image: url("../img/background.jpg");
 }
 
 
@@ -32,9 +32,13 @@ nav {
     padding: 0 20px;
 }
 
-nav a {
+a {
     color: #fff;
     text-decoration: none;
+}
+
+a:hover {
+    color: #ccc;
 }
 
 nav ul {
@@ -46,6 +50,8 @@ nav ul li {
     display: inline-block;
     margin-left: 20px;
 }
+
+
 
 /*navbar end*/
 
@@ -99,6 +105,8 @@ footer {
         max-width: 100%;
     }
 
+
+
     #container-pojistenec {
         display: block;
     }
@@ -107,5 +115,3 @@ footer {
         font-size: 0.8em;
     }
 }
-
-

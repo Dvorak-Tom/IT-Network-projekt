@@ -12,7 +12,7 @@ export class RegPojistence {
         this.sortColumn = 'idNum';
         this.vyplnenaPole = false;
         this.firstRun = true;
-        this.sortAscending = true;
+        this.sortTabulku = true;
     }
 
     // localStorage - ulozeni a nacteni pojistencu
@@ -24,7 +24,7 @@ export class RegPojistence {
                 return pojistenec;
             });
             if (pojistenci.length > 0) {
-                regPojistence.generatorTabulky();
+                this.generatorTabulky();
             }
         }
     }
@@ -53,7 +53,7 @@ export class RegPojistence {
         button.textContent = 'Smaž';
         button.classList.add('btn-smazat');
         button.addEventListener('click', () => {
-            regPojistence.smazPojistence(idNum);
+            this.smazPojistence(idNum);
         });
         return button;
 
@@ -70,12 +70,12 @@ export class RegPojistence {
         return button;
     }
 
-    addPrintButtonListener() {
+    tlacitkoTisk() {
         const btnTisk = document.getElementById('btn-print');
-        btnTisk.addEventListener('click', this.printData.bind(this));
+        btnTisk.addEventListener('click', this.tiskTabulky.bind(this));
     }
 
-    printData() {
+    tiskTabulky() {
         const divToPrint = document.getElementById('table');
         const htmlToPrint = `
           <style type="text/css">
@@ -98,12 +98,11 @@ export class RegPojistence {
         newWin.document.close();
         newWin.print();
         newWin.close();
-
-        /*funkce na trideni tabulky*/
     }
+    /*funkce na trideni tabulky*/
     sortByIdNum(pojistenci) {
         return pojistenci.sort((a, b) => {
-            if (this.sortAscending) {
+            if (this.sortTabulku) {
                 return a.idNum - b.idNum;
             } else {
                 return b.idNum - a.idNum;
@@ -113,7 +112,7 @@ export class RegPojistence {
 
     sortByPrijmeni(pojistenci) {
         return pojistenci.sort((a, b) => {
-            if (this.sortAscending) {
+            if (this.sortTabulku) {
                 return a.prijmeni.localeCompare(b.prijmeni);
             } else {
                 return b.prijmeni.localeCompare(a.prijmeni);
@@ -122,7 +121,7 @@ export class RegPojistence {
     }
     sortByTelefon(pojistenci) {
         return pojistenci.sort((a, b) => {
-            if (this.sortAscending) {
+            if (this.sortTabulku) {
                 return a.tel - b.tel;
             } else {
                 return b.tel - a.tel;
@@ -132,18 +131,17 @@ export class RegPojistence {
 
     sortByVek(pojistenci) {
         return pojistenci.sort((a, b) => {
-            if (this.sortAscending) {
+            if (this.sortTabulku) {
                 return a.vek - b.vek;
             } else {
                 return b.vek - a.vek;
             }
         });
     }
-
     /*KONEC funkce na trideni tabulky*/
 
     // zobrazeni pojistencu v tabulce
-     generatorTabulky() {
+    generatorTabulky() {
         let pojistenci = nacistZLocalStorage();
         if (this.sortColumn === 'idNum') {
             pojistenci = this.sortByIdNum(pojistenci);
@@ -162,8 +160,6 @@ export class RegPojistence {
         // vymazani obsahu tabulky
         table.innerHTML = '';
 
-
-
         let thead = document.createElement('thead');
         thead.id = 'table-head';
         let tr = document.createElement('tr');
@@ -172,6 +168,13 @@ export class RegPojistence {
         for (let i = 0; i < headings.length; i++) {
             let th = document.createElement('th');
             th.textContent = headings[i];
+            /*sipky do th*/
+            let sipky = document.createElement('span');
+            sipky.textContent = '▼▲';
+            sipky.id = 'sipky';
+            th.appendChild(sipky);
+
+            /*end sipky do th*/
             if (headings[i] === 'ID') {
                 th.id = 'idHeader';
             } else if (headings[i] === 'Jméno') {
@@ -211,42 +214,40 @@ export class RegPojistence {
             seznam.style.display = 'none';
             btnTisk.style.display = 'none';
         }
-            // proklikavani radici hlavicky
+        // proklikavaní řadící hlavičky
         const idHeader = document.getElementById('idHeader');
         if (idHeader) {
             idHeader.addEventListener('click', () => {
                 this.sortColumn = 'idNum';
-                this.toggleSortAndRefreshTable();
+                this.sortRefreshTabulku();
             })
-            };
-        
+        };
+
 
         const jmenoHeader = document.getElementById('jmenoHeader');
         if (jmenoHeader) {
             jmenoHeader.addEventListener('click', () => {
                 this.sortColumn = 'jmeno a prijmeni';
-                this.toggleSortAndRefreshTable();
+                this.sortRefreshTabulku();
             });
         }
-        
 
         const vekHeader = document.getElementById('vekHeader');
         if (vekHeader) {
             vekHeader.addEventListener('click', () => {
                 this.sortColumn = 'vek';
-                this.toggleSortAndRefreshTable();
+                this.sortRefreshTabulku();
             });
         }
-        
 
         const telefonHeader = document.getElementById('telefonHeader');
         if (telefonHeader) {
             telefonHeader.addEventListener('click', () => {
                 this.sortColumn = 'telefon';
-                this.toggleSortAndRefreshTable();
-            }); 
+                this.sortRefreshTabulku();
+            });
         }
-        
+
     }
 
     // kontrola vyplneni vsech inputu
@@ -257,22 +258,17 @@ export class RegPojistence {
             this.vyplnenaPole = true;
         }
         this.firstRun = false;
-
-      
-
     }
-    initEventHandlers() {
+
+    tlacitkoUloz() {
         const saveButton = document.getElementById('btn-uloz');
         if (saveButton) {
             saveButton.addEventListener('click', () => this.uloz());
         }
-
-
-
     }
 
-    toggleSortAndRefreshTable() {
-        this.sortAscending = !this.sortAscending;
+    sortRefreshTabulku() {
+        this.sortTabulku = !this.sortTabulku;
         this.generatorTabulky();
     }
 
@@ -327,8 +323,8 @@ export class RegPojistence {
 
 const regPojistence = new RegPojistence();
 regPojistence.nacistPriStartu();
-regPojistence.initEventHandlers();
-regPojistence.addPrintButtonListener();
+regPojistence.tlacitkoUloz();
+regPojistence.tlacitkoTisk();
 
 
 

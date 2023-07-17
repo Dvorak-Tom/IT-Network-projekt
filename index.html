@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Evidence pojistných událostí</title>
         <link rel="stylesheet" type="text/css" href="./CSS/style.css">
@@ -25,41 +25,40 @@
             </header>
 
             <main>
+                <div id="container-registrace">
+                    <h2>Registrace nového pojištěnce</h2>
+                    <div class="container-input">
+                        <img id="img-avatar" src="img/avatar.jpg">
+                    </div>
+
+                    <div id="container-pojistenec">
+                        <div class="container-inputs">
+                            <input type="text" id="inputJmeno" placeholder="Jméno">
+                            <input type="text" id="inputPrijmeni" placeholder="Příjmení">
+                        </div>
+                        <div class="container-inputs">
+                            <input type="number" id="inputVek" placeholder="Věk" max="150">
+                            <input type="number" id="inputTel" placeholder="Telefon">
+                        </div>
+                    </div>
+
+                    <div class="container-inputs" id="chybovaHlaskaDiv"></div>
+                    <button class="btn" id="btn-uloz">Uložit</button>
+                </div>
+
                 <div id="container-seznam">
                     <h2>Výpis pojištěnců</h2>
 
                     <table id="table">
-                        <button id="btn-print" class="btn">🖶</button>
-
-
-
+                        <button id="btn-print" class="btn"> &#128438</button>
                     </table>
                 </div>
-
-                <h2>Registrace nového pojištěnce</h2>
-                <div id="container-pojistenec">
-                    <div class="container-input">
-                        <img id="img-avatar" src="img/avatar.jpg">
-                    </div>
-                    <div class="container-inputs">
-                        <input type="text" id="inputJmeno" placeholder="Jméno">
-                        <input type="text" id="inputPrijmeni" placeholder="Příjmení">
-                    </div>
-                    <div class="container-inputs">
-                        <input type="number" id="inputVek" placeholder="Věk" max="150">
-                        <input type="number" id="inputTel" placeholder="Telefon">
-                    </div>
-                </div>
-
-                <div class="container-inputs" id="chybovaHlaskaDiv"></div>
-                <button class="btn" id="btn-uloz">Uložit</button>
-
             </main>
         </div>
         <footer>
             <p>InsuraApp 2023</p>
-          
-            <button id="jsonLoader" class="btn-info">🖫
+
+            <button id="jsonLoader" class="btn-info">&#128427
                 <span class="btn-info-text">Nahrání testovacích dat</span>
             </button>
         </footer>
@@ -68,14 +67,6 @@
         <script type="module" src="./JS/RegPojistence.js"></script>
         <script type="module" src="./JS/obsluhaUloziste.js"></script>
         <script type="module" src="./JS/obsluhaReg.js"></script>
-
-
-
-
-
-
-
-
     </body>
 
 </html>

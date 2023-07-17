@@ -1,6 +1,7 @@
+'use strict'
 import { nacistZLocalStorage, ulozDoLocalStorage } from './obsluhaUloziste.js';
 
-class PojistenecHandler {
+class DetailPojistence {
     constructor(idNum) {
         this.pojistenci = nacistZLocalStorage();
         this.pojistenec = this.pojistenci.find(pojistenec => pojistenec.idNum === idNum);
@@ -44,6 +45,7 @@ class PojistenecHandler {
         this.pojistenec.poznamka = document.getElementById('poznamka').value;
         this.pojistenec.druhPojisteni = document.getElementById('druhPojisteni').value;
     }
+
     nacteniDatProEditor() {
         document.getElementById('jmeno').value = this.pojistenec.jmeno;
         document.getElementById('prijmeni').value = this.pojistenec.prijmeni;
@@ -52,6 +54,7 @@ class PojistenecHandler {
         document.getElementById('poznamka').value = '';
         document.getElementById('druhPojisteni').value = this.pojistenec.druhPojisteni;
     }
+
     nacteniDat() {
         document.getElementById('info-idNum').textContent = this.pojistenec.idNum;
         document.getElementById('info-jmeno').textContent = this.pojistenec.jmeno;
@@ -90,5 +93,4 @@ let prijmeni = urlParams.get('prijmeni');
 let vek = urlParams.get('vek');
 let telefon = urlParams.get('telefon')
 
-new PojistenecHandler(idNum, jmeno, prijmeni, vek, telefon);
-
+new DetailPojistence(idNum, jmeno, prijmeni, vek, telefon);

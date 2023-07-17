@@ -1,5 +1,6 @@
-.btn {
+/*STYLOVÁNÍ TLAČÍTEK (stylování tlačítek pro mobil je v registrace.css)*/
 
+.btn {
     padding: 10px 30px;
     background-color: #4caf50;
     border-radius: 3px;
@@ -19,7 +20,7 @@ button:hover {
     background-color: #ff5e00;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
 }
 
@@ -27,7 +28,7 @@ button:hover {
     background-color: #ffab0f;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
     margin-top: 2px;
 }
@@ -42,28 +43,24 @@ button:hover {
     border: none;
 }
 
-
-
-/*odsazeni v tabulce*/
+/*odsazení tlačítka edit od smaž v tabulce*/
 #table .btn-edit {
     margin-left: 2px
 }
 
-
 #btn-print {
-  
     padding: 5px;
     float: right;
     display: none;
+    font-size: large;
 }
 
-/* skryt tlacitka na vyber cisel */
+/* skrýt tlačítka na vyběr čísel */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 
 th {
     position: relative;
@@ -71,27 +68,25 @@ th {
 }
 
 #jsonLoader {
-   position:fixed;
-   font-weight: 500;
-    bottom: 0;;
-    right:0;
+    position: fixed;
+    font-weight: 500;
+    bottom: 0;
+    right: 0;
     margin: 10px;
     padding: 0px;
     background-color: rgba(0, 255, 255, 0);
     border: none;
-    color:  #4caf50;
+    color: #4caf50;
     font-size: 3.5em;
     cursor: pointer;
-    }
-#jsonLoader:hover {
-    color: #45a049;
-
 }
 
-
+#jsonLoader:hover {
+    color: #45a049;
+}
 
 .btn-info-text {
-    width:150px;
+    width: 150px;
     font-weight: 500;
     color: #4caf50;
     font-size: xx-small;
@@ -101,59 +96,27 @@ th {
     bottom: 0;
     right: -50%;
     margin: -5px;
-    
-  
-  }
+}
 
-
-
-th::after  {
+/*tlacitka v hlavicce tabulky*/
+th::after {
     content: "seřadit";
     position: absolute;
     top: 90%;
-    /* adjust to place the tooltip where you want */
     left: 50%;
+    padding: 3px 5px;
     background-color: #ffffff;
-    color: #333;
-    padding: 2px 4px;
+    color: #ff5e00;
     font-weight: 100;
     border-radius: 5px;
-    border: 1px solid #333;
-    /* adjust to your liking */
+    border: 1px solid #ff5e00;
     z-index: 1;
-    text-align: center;
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
-    font-size: smaller;
+    font-size: 0.6em;
 }
-
-
 
 th:hover::after {
     opacity: 1;
 }
-
-@media (max-width: 576px) {
-    .btn-smazat {
-        background-color: rgb(255, 94, 0);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 0.8em;
-        padding: 8px 2px;
-        
-    }
-    
-    .btn-edit {
-        background-color: rgb(255, 171, 15);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 0.8em;
-        padding: 8px 2px;
-    }
-
-    
-    }
-
